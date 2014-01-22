@@ -36,6 +36,7 @@ angular.module('todo', ['ngResource'])
         var todo = new Todo();
         todo.text = item.text;
         todo.done = item.done;
+        todo.id = item.id;
         $scope.todos.push(todo);
       });
     });
@@ -62,14 +63,8 @@ angular.module('todo', ['ngResource'])
     };
 
     $scope.archive = function() {
-      var remainingTodos = [];
-      angular.forEach($scope.todos, function(todo) {
-        if (todo.done) {
-          todo.$remove();
-        } else {
-          remainingTodos.push(todo);
-        }
-      });
-      $scope.todos = remainingTodos;
+      $scope.todos = $scope.todos.filter(function(todo) {
+        return !todo.done;
+      })
     };
   });
