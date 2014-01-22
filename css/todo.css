@@ -14,8 +14,3 @@ label {
 li {
     opacity: 1.0;
 }
-li.updating, li.saving {
-    opacity: 0.7;
-}
-
-
