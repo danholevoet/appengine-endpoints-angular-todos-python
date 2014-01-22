@@ -15,7 +15,7 @@
 //
 
 
-// This is a sligthly modified version of Angular.js todo list demo
+// This is a slightly modified version of Angular.js todo list demo
 // from https://angularjs.org/#add-some-control.
 // It uses the resource plugin to talk to an App Engine JSON backend.
 // For more complicated use cases, such as OAuth 2.0 support, you'll likely
