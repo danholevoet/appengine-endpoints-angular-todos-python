@@ -14,7 +14,7 @@
         <p><span>{{remaining()}} of {{todos.length}} remaining</span>
         [ <a href="" ng-click="archive()">archive</a> ]</p>
         <ul class="unstyled">
-          <li class="{{todo.state}}" ng-repeat="todo in todos">
+          <li ng-repeat="todo in todos">
             <input id="todo-{{todo.id}}" type="checkbox" ng-model="todo.done" ng-change="change(todo)" ng-disabled="disabled(todo)">
             <label for="todo-{{todo.id}}" class="done-{{todo.done}}">{{todo.text}}</label>
           </li>
