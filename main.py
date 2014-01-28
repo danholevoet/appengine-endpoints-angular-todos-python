@@ -9,7 +9,7 @@ from endpoints_proto_datastore.ndb import EndpointsModel
 class Todo(EndpointsModel):
   _message_fields_schema = ('id', 'text', 'done', 'created')
 
-  text = ndb.StringProperty()
+  text = ndb.StringProperty(indexed=False)
   done = ndb.BooleanProperty(default=False)
   created = ndb.DateTimeProperty(auto_now_add=True)
 
@@ -34,7 +34,7 @@ class TodoV1(remote.Service):
   def TodoInsert(self, todo):
     todo.put()
     return todo
-    
+
   @Todo.method(path='todos/{id}', http_method='PUT', name='todos.update')
   def TodoUpdate(self, todo):
     todo.put()
